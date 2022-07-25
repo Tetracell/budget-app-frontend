@@ -1,11 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react' //potentially for diaplaying total in navbar
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react"; //potentially for diaplaying total in navbar
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
 
-const Nav = () => {
+const Navigationbar = () => {
   return (
-    <div>Nav</div>
-  )
-}
+    <Navbar sticky="top" bg="primary" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">Tom's Budgeting App</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Nav className="me-auto">
+          <Nav.Link href="/new">New Transaction</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
+  );
+};
 
-export default Nav
+export default Navigationbar;
