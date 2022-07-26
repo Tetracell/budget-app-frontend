@@ -7,6 +7,7 @@ import axios from "axios";
 //Components
 import Home from "./Components/Home";
 import Navigationbar from "./Components/Nav";
+import { NewTransaction } from "./Components/NewTransaction";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -22,6 +23,7 @@ function App() {
       <Navigationbar />
       <Routes>
         <Route path="/" element={<Home transactions={transactions} />} />
+        <Route path="/new" element={<NewTransaction/>}/>;
       </Routes>
     </div>
   );

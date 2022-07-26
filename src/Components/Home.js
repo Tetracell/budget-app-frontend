@@ -1,24 +1,19 @@
-import React from 'react'
+import React from "react";
+import { Transaction } from "./Transaction";
 
-const Home = ({transactions}) => {
+const Home = ({ transactions }) => {
   return (
     <>
-        {transactions.map((trans, index) => {
-            let url=`/transactions/${index}`;
-            return (
-                <>
-                    <ul>
-                        <li>{trans.item_name}</li>
-                        <li>{trans.amount}</li>
-                        <li>{trans.date}</li>
-                        <li>{trans.from}</li>
-                        <li>{trans.category}</li>
-                    </ul>
-                </>
-            )
-        })}
+      {transactions.map((transaction, index) => {
+        let url = `/transactions/${index}`;
+        return (
+          <>
+            <Transaction transaction={transaction} />
+          </>
+        );
+      })}
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
