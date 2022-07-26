@@ -1,5 +1,6 @@
 import React from "react";
 import { Transaction } from "./Transaction";
+import Table from "react-bootstrap/Table";
 
 const Home = ({ transactions }) => {
   return (
