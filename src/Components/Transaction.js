@@ -1,14 +1,14 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import { Link, useNavigate } from "react-router-dom";
+
+import EditTransaction from "./EditTransaction";
 
 export const Transaction = ({ transaction, index }) => {
-  console.log(index);
-  const handleEdit = () => {
+  const editUrl = `/edit/${index}`;
+  const navigate = useNavigate();
+  const handleDelete = (index) => {};
 
-  }
-  const handleDelete = () => {
-
-  }
   return (
     <tr>
       <td>{index + 1}</td>
@@ -22,10 +22,14 @@ export const Transaction = ({ transaction, index }) => {
       )}
       <td>{transaction.category}</td>
       <td>
-        <Button variant="warning" onClick={handleEdit}>Edit</Button>
+        <Button variant="warning" onClick={()=>navigate(`${editUrl}`)}>
+          Edit
+        </Button>
       </td>
       <td>
-        <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        <Button variant="danger" onClick={handleDelete}>
+          Delete
+        </Button>
       </td>
     </tr>
   );

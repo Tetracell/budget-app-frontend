@@ -1,7 +1,7 @@
 import React from "react";
 import { Transaction } from "./Transaction";
 import Table from "react-bootstrap/Table";
-import { Container } from "react-bootstrap";
+import  Container  from "react-bootstrap/Container";
 
 const Home = ({ transactions }) => {
   return (

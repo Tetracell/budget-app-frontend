@@ -8,6 +8,7 @@ import axios from "axios";
 import Home from "./Components/Home";
 import Navigationbar from "./Components/Nav";
 import { NewTransaction } from "./Components/NewTransaction";
+import EditTransaction from "./Components/EditTransaction";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home transactions={transactions} />} />
         <Route path="/new" element={<NewTransaction/>}/>;
+        <Route path="/edit/:id" element={<EditTransaction API={API}/>}/>
       </Routes>
     </div>
   );
