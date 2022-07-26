@@ -9,6 +9,7 @@ import Home from "./Components/Home";
 import Navigationbar from "./Components/Nav";
 import { NewTransaction } from "./Components/NewTransaction";
 import EditTransaction from "./Components/EditTransaction";
+import { ShowTransaction } from "./Components/ShowTransaction";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -24,8 +25,9 @@ function App() {
       <Navigationbar />
       <Routes>
         <Route path="/" element={<Home transactions={transactions} />} />
-        <Route path="/new" element={<NewTransaction/>}/>;
-        <Route path="/edit/:id" element={<EditTransaction API={API}/>}/>
+        <Route path="/:transaction" element={<ShowTransaction />} />
+        <Route path="/new" element={<NewTransaction />} />;
+        <Route path="/edit/:id" element={<EditTransaction API={API} />} />
       </Routes>
     </div>
   );

@@ -9,7 +9,7 @@ const Navigationbar = () => {
   return (
     <Navbar sticky="top" bg="primary" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Tom's Budgeting App</Navbar.Brand>
+        <Navbar.Brand href="/">Ultimate Budget App 9000</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav className="me-auto">
           <Nav.Link href="/new">New Transaction</Nav.Link>

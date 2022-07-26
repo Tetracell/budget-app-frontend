@@ -11,7 +11,7 @@ export const Transaction = ({ transaction, index }) => {
 
   return (
     <tr>
-      <td>{index + 1}</td>
+      <td><Link to={`/${index}`}>{index+1}</Link></td>
       <td>{transaction.date}</td>
       <td>{transaction.from}</td>
       <td>{transaction.item_name}</td>
