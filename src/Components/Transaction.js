@@ -1,10 +1,18 @@
 import React from "react";
+import Table from "react-bootstrap/Table";
 
-export const Transaction = ({ transaction }) => {
+export const Transaction = ({ transaction, index } ) => {
+  console.log(index);
   return (
-    <>
-      <div>{transaction.item_name}</div>
-      <div>{transaction.amount}</div>
-    </>
+    <tr>
+      <td>{index+1}</td>
+      <td>{transaction.date}</td>
+      <td>{transaction.from}</td>
+      <td>{transaction.item_name}</td>
+      <td>${transaction.amount}</td>
+      <td>{transaction.category}</td>
+      <td>Delete</td>
+      <td>Edit</td>
+    </tr>
   );
 };
