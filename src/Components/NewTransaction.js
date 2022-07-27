@@ -11,7 +11,7 @@ const NewTransaction = ({ API }) => {
   const navigate = useNavigate();
   const [transaction, setTransaction] = useState({
     item_name: "",
-    amount: 0,
+    amount: "",
     date: "",
     from: "",
     category: "Income",
@@ -54,7 +54,7 @@ const NewTransaction = ({ API }) => {
           <Form.Label>Date (mm/dd/yyyy)</Form.Label>
           <Form.Control
             id="date"
-            type="text"
+            type="date"
             value={transaction.date}
             onChange={handleChange}
           />
