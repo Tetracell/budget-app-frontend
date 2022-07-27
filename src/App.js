@@ -22,7 +22,7 @@ function App() {
   }, [transactions]);
   return (
     <div className="App">
-      <Navigationbar />
+      <Navigationbar transactions={transactions}/>
       <Routes>
         <Route path="/" element={<Home transactions={transactions} />} />
         <Route path="/:transactionID" element={<ShowTransaction />} />

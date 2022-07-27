@@ -63,7 +63,7 @@ const EditTransaction = ({ API }) => {
           <Form.Label>Date (mm/dd/yyyy)</Form.Label>
           <Form.Control
             id="date"
-            type="text"
+            type="date"
             value={transaction.date}
             onChange={handleChange}
           />

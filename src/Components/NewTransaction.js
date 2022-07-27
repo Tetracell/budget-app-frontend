@@ -11,7 +11,7 @@ const NewTransaction = ({ API }) => {
   const navigate = useNavigate();
   const [transaction, setTransaction] = useState({
     item_name: "",
-    amount: "",
+    amount: Number(""),
     date: "",
     from: "",
     category: "Income",
