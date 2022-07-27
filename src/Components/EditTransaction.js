@@ -80,19 +80,13 @@ const EditTransaction = ({ API }) => {
           </InputGroup>
         </Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Select id="category" onChange={handleChange}>
-          <option
-            value="Income"
-            selected={transaction.category === "Income" ? true : false}
-          >
-            Income
-          </option>
-          <option
-            value="Expense"
-            selected={transaction.category === "Expense" ? true : false}
-          >
-            Expense
-          </option>
+        <Form.Select
+          id="category"
+          onChange={handleChange}
+          value={transaction.category}
+        >
+          <option value="Income">Income</option>
+          <option value="Expense">Expense</option>
         </Form.Select>
       </Form>
     </Container>
