@@ -1,7 +1,7 @@
 import React from "react";
 import { Transaction } from "./Transaction";
 import Table from "react-bootstrap/Table";
-import  Container  from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 
 const Home = ({ transactions }) => {
   return (
@@ -21,7 +21,13 @@ const Home = ({ transactions }) => {
           <tbody>
             {transactions.map((transaction, index) => {
               let url = `/transactions/${index}`;
-              return <Transaction transaction={transaction} index={index} />;
+              return (
+                <Transaction
+                  transaction={transaction}
+                  index={index}
+                  key={index}
+                />
+              );
             })}
           </tbody>
         </Table>

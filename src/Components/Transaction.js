@@ -5,9 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import EditTransaction from "./EditTransaction";
 
 export const Transaction = ({ transaction, index }) => {
-  const editUrl = `/edit/${index}`;
+  const editUrl = `/${index}/edit`;
   const navigate = useNavigate();
   const handleDelete = (index) => {};
+  console.log(index);
 
   return (
     <tr>

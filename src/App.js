@@ -25,9 +25,9 @@ function App() {
       <Navigationbar />
       <Routes>
         <Route path="/" element={<Home transactions={transactions} />} />
-        <Route path="/:transaction" element={<ShowTransaction />} />
+        <Route path="/:transactionID" element={<ShowTransaction />} />
         <Route path="/new" element={<NewTransaction />} />;
-        <Route path="/edit/:id" element={<EditTransaction API={API} />} />
+        <Route path="/:transactionID/edit" element={<EditTransaction API={API} />} />
       </Routes>
     </div>
   );
