@@ -20,13 +20,14 @@ function App() {
       setTransactions(res.data);
     });
   }, [transactions]);
+
   return (
     <div className="App">
-      <Navigationbar transactions={transactions}/>
+      <Navigationbar transactions={transactions} />
       <Routes>
         <Route path="/" element={<Home transactions={transactions} />} />
-        <Route path="/:transactionID" element={<ShowTransaction />} />
-        <Route path="/new" element={<NewTransaction API={API}/>} />;
+        <Route path="/:transactionID" element={<ShowTransaction API={API} />} />
+        <Route path="/new" element={<NewTransaction API={API} />} />;
         <Route
           path="/:transactionID/edit"
           element={<EditTransaction API={API} />}
