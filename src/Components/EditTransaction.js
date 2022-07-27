@@ -89,6 +89,8 @@ const EditTransaction = ({ API }) => {
           <option value="Expense">Expense</option>
         </Form.Select>
       </Form>
+      <Button onClick={handleTransaction}>Apply Changes</Button>
+      <Button>Delete Transaction</Button>
     </Container>
   );
 };
