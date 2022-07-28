@@ -20,7 +20,6 @@ const Home = ({ transactions }) => {
           </thead>
           <tbody>
             {transactions.map((transaction, index) => {
-              let url = `/transactions/${index}`;
               return (
                 <Transaction
                   transaction={transaction}
