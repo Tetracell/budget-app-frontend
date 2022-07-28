@@ -8,14 +8,18 @@ import Container from "react-bootstrap/Container";
 const Navigationbar = ({ transactions }) => {
   // A good lesson on why not necessarily EVERYTHING needs to be in state
   const balance = transactions
-    .map((transaction) => //Map through transactions
-      transaction.category === "Income" //Check the category to determine income or expense
-        ? Number(transaction.amount)
-        : Number(transaction.amount * -1)
+    .map(
+      (
+        transaction //Map through transactions
+      ) =>
+        transaction.category === "Income" //Check the category to determine income or expense
+          ? Number(transaction.amount)
+          : Number(transaction.amount * -1)
     )
-    .reduce((a, b) => { // Now, use reduce to bring the array to one value
+    .reduce((a, b) => {
+      // Now, use reduce to bring the array to one value
       return Number(a) + Number(b); //Add numbers together
-    }, 0);
+    }, 0); // Special thanks to GiGi for giving me a micro-lecture on chaning methods
 
   return (
     <Navbar sticky="top" bg="primary" variant="dark" expand="lg">
@@ -26,6 +30,7 @@ const Navigationbar = ({ transactions }) => {
           <Nav.Link href="/new">New Transaction</Nav.Link>
         </Nav>
         <Nav className="me-auto" id="balance">
+          
           <Nav.Item>Balance: ${balance}</Nav.Item>
         </Nav>
       </Container>
