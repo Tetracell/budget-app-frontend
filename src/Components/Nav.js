@@ -6,19 +6,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
 const Navigationbar = ({ transactions }) => {
-  const [balance, setBalance] = useState(0);
-
-  const balanceDisplay = () => {
-    transactions.forEach((element) => {
-      console.log(element.amount);
-      element.category === "Income"
-        ? setBalance((prevBalance) => prevBalance + Number(element.amount))
-        : setBalance((prevBalance) => prevBalance - Number(element.amount));
-    });
-  };
-  useEffect(() => {
-    balanceDisplay();
-  }, [transactions]);
+  const balance = transactions
+    .map((transaction) =>
+      transaction.category === "Income"
+        ? Number(transaction.amount)
+        : Number(transaction.amount * -1)
+    )
+    .reduce((a, b) => {
+      return Number(a) + Number(b);
+    }, 0);
 
   return (
     <Navbar sticky="top" bg="primary" variant="dark" expand="lg">
@@ -28,7 +24,7 @@ const Navigationbar = ({ transactions }) => {
         <Nav className="me-auto">
           <Nav.Link href="/new">New Transaction</Nav.Link>
         </Nav>
-        <Nav className="me-auto">
+        <Nav className="me-auto" id="balance">
           <Nav.Item>Balance: ${balance}</Nav.Item>
         </Nav>
       </Container>
