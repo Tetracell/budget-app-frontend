@@ -18,4 +18,5 @@ ___
 - Add a confirmation for deleting an entry
 - Display a graph of some kind showing cash flow on the index page
 - Make the table scrollable if too long, so that graph can always be shown
+- Sort based on `table` header (date, transaction amount, alphabetically by merchant and transaction name)
 
