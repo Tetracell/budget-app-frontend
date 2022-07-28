@@ -6,8 +6,7 @@ import "../Styles/Nav.css"
 
 const Navigationbar = ({ transactions }) => {
   // A good lesson on why not necessarily EVERYTHING needs to be in state
-  const balance = transactions
-    .map(
+  const balance = transactions.map(
       (
         transaction //Map through transactions
       ) =>
