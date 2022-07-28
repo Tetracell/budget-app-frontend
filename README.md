@@ -20,3 +20,8 @@ ___
 - Make the table scrollable if too long, so that graph can always be shown
 - Sort based on `table` header (date, transaction amount, alphabetically by merchant and transaction name)
 
+## Live Site Deploys
+___
+https://transcendent-lokum-9de685.netlify.app/ - Front end
+https://tlatulipe-budget-app.herokuapp.com/ - Back End (Server)
+
