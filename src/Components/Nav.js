@@ -6,14 +6,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
 const Navigationbar = ({ transactions }) => {
+  // A good lesson on why not necessarily EVERYTHING needs to be in state
   const balance = transactions
-    .map((transaction) =>
-      transaction.category === "Income"
+    .map((transaction) => //Map through transactions
+      transaction.category === "Income" //Check the category to determine income or expense
         ? Number(transaction.amount)
         : Number(transaction.amount * -1)
     )
-    .reduce((a, b) => {
-      return Number(a) + Number(b);
+    .reduce((a, b) => { // Now, use reduce to bring the array to one value
+      return Number(a) + Number(b); //Add numbers together
     }, 0);
 
   return (
