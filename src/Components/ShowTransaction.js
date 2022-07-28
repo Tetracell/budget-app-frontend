@@ -17,6 +17,12 @@ export const ShowTransaction = ({ API }) => {
     category: "",
   });
 
+  const transactionValue = () => {
+    return transaction.category === "Income"
+      ? Number(transaction.amount)
+      : Number(transaction.amount) * -1;
+  };
+
   useEffect(() => {
     axios
       .get(`${API}/transactions/${transactionID}`)
@@ -28,6 +34,16 @@ export const ShowTransaction = ({ API }) => {
       <Form>
         <Row>
           <Form.Group as={Col}>
+            <Form.Label>Merchant</Form.Label>
+            <Form.Control
+              type="text"
+              value={transaction.from}
+              readOnly
+            ></Form.Control>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col}>
             <Form.Label>Date</Form.Label>
             <Form.Control
               type="date"
@@ -36,10 +52,10 @@ export const ShowTransaction = ({ API }) => {
             ></Form.Control>
           </Form.Group>
           <Form.Group as={Col}>
-            <Form.Label>Merchant</Form.Label>
+            <Form.Label>Transaction Name</Form.Label>
             <Form.Control
               type="text"
-              value={transaction.from}
+              value={transaction.item_name}
               readOnly
             ></Form.Control>
           </Form.Group>
@@ -49,10 +65,20 @@ export const ShowTransaction = ({ API }) => {
               <InputGroup.Text>$</InputGroup.Text>
               <Form.Control
                 type="number"
-                value={transaction.amount}
+                value={transactionValue()}
                 readOnly
               ></Form.Control>
             </InputGroup>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col}>
+            <Form.Label>Category</Form.Label>
+            <Form.Control
+              type="text"
+              value={transaction.category}
+              readOnly
+            ></Form.Control>
           </Form.Group>
         </Row>
       </Form>

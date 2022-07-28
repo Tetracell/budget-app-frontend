@@ -19,13 +19,11 @@ const EditTransaction = ({ API }) => {
   });
 
   let { transactionID } = useParams();
-  console.log(transactionID);
-
   useEffect(() => {
     axios.get(`${API}/transactions/${transactionID}`).then((res) => {
       setTransaction(res.data);
     });
-  }, []);
+  }, [API, transactionID]);
   const handleChange = (event) => {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
@@ -73,7 +71,6 @@ const EditTransaction = ({ API }) => {
             <Form.Control
               id="amount"
               type="number"
-              placeholder={"0.00"}
               value={transaction.amount}
               onChange={handleChange}
             />
