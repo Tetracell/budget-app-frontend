@@ -9,7 +9,6 @@ import { InputGroup } from "react-bootstrap";
 
 const EditTransaction = ({ API }) => {
   const navigate = useNavigate();
-  const categories = ["Income", "Expense"];
   const [transaction, setTransaction] = useState({
     item_name: "",
     amount: 0,
