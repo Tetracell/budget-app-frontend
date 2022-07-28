@@ -22,6 +22,6 @@ ___
 
 ## Live Site Deploys
 ___
-https://transcendent-lokum-9de685.netlify.app/ - Front end
-https://tlatulipe-budget-app.herokuapp.com/ - Back End (Server)
+- https://transcendent-lokum-9de685.netlify.app/ - Front end
+- https://tlatulipe-budget-app.herokuapp.com/ - Back End (Server)
 
