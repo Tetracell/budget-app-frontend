@@ -12,14 +12,13 @@ const Navigationbar = ({ transactions }) => {
         transaction //Map through transactions
       ) =>
         transaction.category === "Income" //Check the category to determine income or expense
-          ? Number(transaction.amount)
-          : Number(transaction.amount * -1)
+          ? Number(transaction.amount) // pass a as positive number
+          : Number(transaction.amount * -1) // pass a as negative number
     )
     .reduce((a, b) => {
       // Now, use reduce to bring the array to one value
       return Number(a) + Number(b); //Add numbers together
-    }, 0)
-    .tofixed(2); // Special thanks to GiGi for giving me a mini-lecture on chaining methods
+    }, 0); // Special thanks to GiGi for giving me a mini-lecture on chaining methods
 
   return (
     <Navbar sticky="top" bg="primary" variant="dark" expand="lg">
@@ -31,7 +30,7 @@ const Navigationbar = ({ transactions }) => {
         </Nav>
         {}
         <Nav className="me-auto" id="balance">
-          <Nav.Item>Balance: ${balance}</Nav.Item>
+          <Nav.Item>Balance: ${balance.toFixed(2)}</Nav.Item>
         </Nav>
       </Container>
     </Navbar>
