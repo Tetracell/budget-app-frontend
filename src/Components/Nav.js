@@ -2,11 +2,12 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import "../Styles/Nav.css"
+import "../Styles/Nav.css";
 
 const Navigationbar = ({ transactions }) => {
   // A good lesson on why not necessarily EVERYTHING needs to be in state
-  const balance = transactions.map(
+  const balance = transactions
+    .map(
       (
         transaction //Map through transactions
       ) =>
@@ -17,7 +18,8 @@ const Navigationbar = ({ transactions }) => {
     .reduce((a, b) => {
       // Now, use reduce to bring the array to one value
       return Number(a) + Number(b); //Add numbers together
-    }, 0); // Special thanks to GiGi for giving me a mini-lecture on chaining methods
+    }, 0)
+    .tofixed(2); // Special thanks to GiGi for giving me a mini-lecture on chaining methods
 
   return (
     <Navbar sticky="top" bg="primary" variant="dark" expand="lg">
