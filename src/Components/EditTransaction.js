@@ -30,6 +30,9 @@ const EditTransaction = ({ API }) => {
     event.preventDefault();
     putTransaction();
   };
+  const handleDelete = () => {
+    axios.delete(`${API}/transactions/${transactionID}`).then((res) => navigate("/"));
+  };
   const putTransaction = () => {
     axios
       .put(`${API}/transactions/${transactionID}`, transaction)
@@ -86,7 +89,7 @@ const EditTransaction = ({ API }) => {
         </Form.Select>
       </Form>
       <Button onClick={handleTransaction}>Apply Changes</Button>
-      <Button>Delete Transaction</Button>
+      <Button variant="danger" onClick={handleDelete}>Delete Transaction</Button>
     </Container>
   );
 };
